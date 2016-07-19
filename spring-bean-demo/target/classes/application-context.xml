@@ -4,10 +4,19 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="beanB" class="com.infiniteskills.spring.BeanB" />
+	
+	<bean id="beanA" class="com.infiniteskills.spring.BeanA">
+		<property name="age" value="23" />
+		<property name="beanB" ref="beanB">
+			<!-- <bean class="com.infiniteskills.spring.BeanB" /> -->
+		</property>
+	</bean>
 
+	<!-- 
 	<bean id="beanA" class="com.infiniteskills.spring.BeanA">
 		<constructor-arg type="com.infiniteskills.spring.BeanB" ref="beanB" />
 	</bean>
+	 -->
 
 	<!-- 
 	<bean id="beanA" class="com.infiniteskills.spring.BeanA">

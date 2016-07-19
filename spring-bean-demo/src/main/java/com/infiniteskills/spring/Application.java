@@ -7,7 +7,8 @@ public class Application {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
-		BeanA bean1 = context.getBean("beanA", BeanA.class);
+		BeanA beanA = context.getBean("beanA", BeanA.class);
+		beanA.getBeanB().execute();
 		
 		((ClassPathXmlApplicationContext)context).close();		
 	}
