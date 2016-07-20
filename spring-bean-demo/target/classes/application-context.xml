@@ -1,46 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="beanB" class="com.infiniteskills.spring.BeanB" />
+<!-- 
+	<bean id="beanB" class="com.infiniteskills.spring.BeanB">
+		<constructor-arg value="Test"></constructor-arg>
+	</bean>
+ -->
 	
-	<bean id="beanA" class="com.infiniteskills.spring.BeanA">
-		<property name="age" value="23" />
+	<bean id="beanB" class="com.infiniteskills.spring.BeanB" c:val="Test2" />
+	
+<!-- 		
+	<bean id="beanA" class="com.infiniteskills.spring.BeanA" >
+		<property name="prop1" value="23" />
 		<property name="beanB" ref="beanB">
-			<!-- <bean class="com.infiniteskills.spring.BeanB" /> -->
 		</property>
 	</bean>
-
-	<!-- 
+-->
+			<!-- <bean class="com.infiniteskills.spring.BeanB" /> -->
+	<bean id="beanA" class="com.infiniteskills.spring.BeanA" p:prop1="23" p:beanB-ref="beanB" />
+ 
+ 
+<!-- 
 	<bean id="beanA" class="com.infiniteskills.spring.BeanA">
 		<constructor-arg type="com.infiniteskills.spring.BeanB" ref="beanB" />
 	</bean>
-	 -->
+ -->
 
-	<!-- 
+<!-- 
 	<bean id="beanA" class="com.infiniteskills.spring.BeanA">
 		<constructor-arg type="com.infiniteskills.spring.BeanB" >
 			<ref bean="beanB" />
 		</constructor-arg>
 	</bean>
-	 -->
+ -->
 
-	<!-- 
+<!-- 
 	<bean id="beanA" class="com.infiniteskills.spring.BeanA">
 		<constructor-arg type="com.infiniteskills.spring.BeanB" >
 			<bean class="com.infiniteskills.spring.BeanB" />
 		</constructor-arg>
 	
 	</bean>
-	 -->
+ -->
 	 
 	 
-	<!-- 
+<!-- 
 	<bean id="beanX" class="com.infiniteskills.spring.BeanA" name="_bean1">
 		<constructor-arg value="Last" type="String" index="1" />
 		<constructor-arg value="First" type="String"  index="0" />
 	</bean>
- 	-->
+-->
  	
 </beans>
