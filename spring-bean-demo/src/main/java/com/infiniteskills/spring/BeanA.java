@@ -22,7 +22,16 @@ public class BeanA {
 		System.out.println(value);
 	}
 */	
-	private int age;
+	private int prop1;
+	public int getProp1() {
+		return prop1;
+	}
+
+	public void setProp1(int prop1) {
+		this.prop1 = prop1;
+		System.out.println(String.format("set prop1 = %s", this.prop1));
+	}
+
 	private BeanB beanB;
 	
 	public BeanB getBeanB() {
@@ -31,15 +40,6 @@ public class BeanA {
 
 	public void setBeanB(BeanB beanB) {
 		this.beanB = beanB;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		System.out.println("in age setter");
-		this.age = age;
 	}
 
 
