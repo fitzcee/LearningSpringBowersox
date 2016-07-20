@@ -4,6 +4,10 @@ public class BeanB {
 
 	private String val;
 	
+	public BeanB(){
+		
+	}
+	
 	public BeanB(String val) {
 		super();
 		this.val = val;
